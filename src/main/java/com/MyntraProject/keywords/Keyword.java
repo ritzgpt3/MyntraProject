@@ -12,8 +12,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.First_Framework.Keywords.Keyword;
 import com.MyntraProject.errors.InvalidBrowserError;
 import com.MyntraProject.exceptions.InvalidSelectorException;
 
@@ -213,4 +215,33 @@ public class Keyword {
 			}
 		}
 	}
+
+	public void hoverOn(WebElement elementToHover) {
+		Actions actions = new Actions(Keyword.getDriver());
+		actions.moveToElement(elementToHover).build().perform();
+		;
+	}
+
+	public void handlingWindows() {
+		String parent = getDriver().getWindowHandle();
+		Set<String> win1 = driver.getWindowHandles();
+		win1.remove(parent);
+
+		for (String handles : win1) {
+			driver.switchTo().window(handles);
+			String title1 = driver.getCurrentUrl();
+			System.out.println(title1);
+			/*
+			 * if(title.contains("second")) {
+			 * driver.findElement(By.xpath("//button[text()=\"Click Me\"]")).click(); String
+			 * text = driver.findElement(By.xpath("//p[@id=\"demo\"]")).getText();
+			 * System.out.println(text); }
+			 */
+
+		}
+		public void scrollWindow() {
+			driver.executeScript("window.scrollBy(0,3700)");
+		}
+
+
 }
