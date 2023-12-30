@@ -15,7 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import com.First_Framework.Keywords.Keyword;
+import com.MyntraProject.keywords.Keyword;
 import com.MyntraProject.errors.InvalidBrowserError;
 import com.MyntraProject.exceptions.InvalidSelectorException;
 
@@ -231,6 +231,7 @@ public class Keyword {
 			driver.switchTo().window(handles);
 			String title1 = driver.getCurrentUrl();
 			System.out.println(title1);
+		}
 			/*
 			 * if(title.contains("second")) {
 			 * driver.findElement(By.xpath("//button[text()=\"Click Me\"]")).click(); String
